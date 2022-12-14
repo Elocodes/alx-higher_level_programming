@@ -5,4 +5,4 @@ j = 97
 while (j <= i):
     alphabt += chr(j)
     j += 1
-print(f"{alphabt}", end="")
+print("{}".format(alphabt), end="")
