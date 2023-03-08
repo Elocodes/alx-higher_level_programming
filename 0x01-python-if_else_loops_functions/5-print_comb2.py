@@ -1,15 +1,10 @@
 #!/usr/bin/python3
 
-space = " "
+# 02d - formats an integer(d) to a minimum width of 2
+# so if a single digit, it adds a padding of 0 to the left
 
 for each_num in range(0, 100):
     if each_num == 99:
         print("99")
     else:
-        if each_num < 10:
-            num2str = str(each_num)
-            str_zero = '0'
-            to_print = str_zero + num2str
-        else:
-            to_print = each_num
-        print("{}, {}".format(to_print, space), end='')
+        print("{:02d}, ".format(each_num), end='')
