@@ -11,4 +11,4 @@ for each_num in range(0, 99):
     else:
         to_print = each_num
     print("{}, {}".format(to_print, space), end='')
-print(f"{last_num}")
+print("{}".format(last_num))
