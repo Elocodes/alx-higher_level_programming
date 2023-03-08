@@ -10,5 +10,5 @@ for each_num in range(0, 99):
         to_print = str_zero + num2str
     else:
         to_print = each_num
-    print(f"{to_print}, {space}", end='')
+    print("{}, {}".format(to_print, space), end='')
 print(f"{last_num}")

@@ -6,4 +6,4 @@ a = 97
 while (a <= z):
     alphabt += chr(a)
     a += 1
-print(f"{alphabt}", end="")
+print("{}".format(alphabt), end="")

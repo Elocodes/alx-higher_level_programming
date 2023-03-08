@@ -10,4 +10,4 @@ while (j <= i):
         j += 1
     if (j == 113):
         j += 1
-print(f"{alphabt}", end="")
+print("{}".format(alphabt), end="")
