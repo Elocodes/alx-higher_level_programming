@@ -10,7 +10,6 @@
         print("{}".format(to_upper), end='')
     print("")"""
 
-#!/usr/bin/python3
 def uppercase(str):
     for i in str:
         i = ord(i)
