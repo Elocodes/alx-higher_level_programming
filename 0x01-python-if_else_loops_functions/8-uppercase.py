@@ -8,4 +8,4 @@ def uppercase(str):
             each_letter -= 32
         to_upper = chr(each_letter)
         print("{}".format(to_upper), end='')
-    print()
+    print("")
