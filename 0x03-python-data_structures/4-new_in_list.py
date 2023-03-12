@@ -14,4 +14,4 @@ def new_in_list(my_list, idx, element):
         for index, each_num in enumerate(list_copy):
             if idx == index:
                 list_copy[index] = element
-                return (list_copy)
+        return (list_copy)

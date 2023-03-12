@@ -12,4 +12,4 @@ def replace_in_list(my_list, idx, element):
         for index, each_num in enumerate(my_list):
             if idx == index:
                 my_list[index] = element
-                return (my_list)
+        return (my_list)
