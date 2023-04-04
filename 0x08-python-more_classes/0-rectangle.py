@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """This module performs py operation on a rectangle
 
 The class rectangle contains methods that calculate area
