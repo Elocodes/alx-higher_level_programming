@@ -1,0 +1,58 @@
+"""Doctest checks the edge cases of my addition function, add_integer"""
+
+importing function
+>>> add_integer = __import__("0-add_integer").add_integer
+
+
+checking for poistive integers
+>>> add_integer(1, 2)
+3
+
+checking for positive, negative
+>>> add_integer(1, -2)
+-1
+
+negative, postive
+>>> add_integer(-2, 1)
+-1
+
+integer, float. (floats are casted into integer)
+>>> add_integer(5, 5.2)
+10
+
+negative, negative
+>>> add_integer(-1, -1)
+-2
+
+checking for square root of perfect squares(since they are integers)
+>>> add_integer(64 ** (1/2), 3)
+11
+
+square root and negative
+>>> add_integer(64 ** (1/2), -2)
+6
+
+checking for square root of imperfect squares(since they are floats)
+>>> add_integer(11 ** (1/2), 2)
+5
+
+checking for square root of imperfect squares
+>>> add_integer(2, 11 ** (1/2))
+5
+
+checking for strings
+>>> add_integer('C', 'is fun')
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer('C', 7)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(3, 'is fun')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
