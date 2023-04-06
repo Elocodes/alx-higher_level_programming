@@ -10,11 +10,13 @@ the rectangle.
 
 
 class Rectangle:
-    """An empty class that defines what a rectangle is.
+    """A class that defines what a rectangle is.
 
     Rectangle: a four sided shape consisting of L and W
     of varying sizes.
     """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """function initializezs class attributes.
 
@@ -27,6 +29,7 @@ class Rectangle:
         """
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -78,3 +81,12 @@ class Rectangle:
             rect_shape += '\n'.join('#' * self.__width
                                     for row in range(self.__height))
         return rect_shape
+
+    def __repr__(self):
+        """function returns string representation of the rectangle"""
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """function prints statement if rectangle is deleted"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1

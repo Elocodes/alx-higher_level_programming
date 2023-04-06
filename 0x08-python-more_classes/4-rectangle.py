@@ -78,3 +78,7 @@ class Rectangle:
             rect_shape += '\n'.join('#' * self.__width
                                     for row in range(self.__height))
         return rect_shape
+
+    def __repr__(self):
+        """function returns string of shape of the rectangle with '#'"""
+        return "Rectangle({}, {})".format(self.__width, self.__height)
