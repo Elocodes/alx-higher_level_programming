@@ -1,0 +1,8 @@
+"""Tests a function that prints name to stdout"""
+
+importing function
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+checking for only one input
+>>> say_my_name('chi')
+My name is chi
