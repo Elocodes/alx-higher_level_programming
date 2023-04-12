@@ -1,0 +1,37 @@
+"""Tests the list function"""
+
+importing my class which inherits from list
+>>> MyList = __import__("1-my_list").MyList
+
+checking for empty list
+>>> givenlist = MyList()
+>>> givenlist.print_sorted()
+[]
+
+checking for subclass
+>>> issubclass(MyList, list)
+True
+
+checking for ascending order sorting
+>>> givenlist.append(-6)
+>>> givenlist.append(0)
+>>> givenlist.append(-4)
+>>> givenlist.append(7)
+>>> givenlist.append(1)
+>>> print(givenlist)
+[-6, 0, -4, 7, 1]
+>>> givenlist.print_sorted()
+[-6, -4, 0, 1, 7]
+>>> print(givenlist)
+[-6, 0, -4, 7, 1]
+
+checking for string in list elements
+>>> givenlist.append(-6)
+>>> givenlist.append(0)
+>>> givenlist.append(-4)
+>>> givenlist.append(7)
+>>> givenlist.append("1")
+>>> givenlist.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: '<' not supported between instances of 'str' and 'int'
