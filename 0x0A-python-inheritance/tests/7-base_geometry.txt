@@ -1,0 +1,22 @@
+"""Tests the BaseGeometry Base class"""
+
+importing class
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+calling class
+>>> mybase = BaseGeometry()
+
+checking if value is int
+>>> mybase.integer_validator("age", "5")
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+checking if value is positive
+>>> mybase.integer_validator("age", -5)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+checking default. nothing should be printed since function only raises except
+>>> mybase.integer_validator("age", 2)
