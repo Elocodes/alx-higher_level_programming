@@ -6,6 +6,12 @@ importing class
 calling class
 >>> mybase = BaseGeometry()
 
+checking output when area function is called
+>>> mybase.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
 checking if value is int
 >>> mybase.integer_validator("age", "5")
 Traceback (most recent call last):
@@ -17,6 +23,57 @@ checking if value is positive
 Traceback (most recent call last):
 ...
 ValueError: age must be greater than 0
+
+checking for 0
+>>> mybase.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+checking for tuple
+>>> mybase.integer_validator("age", (2, 9))
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+checking for list
+>>> mybase.integer_validator("age", [1])
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+checking for dict
+>>> mybase.integer_validator("age", {2,6})
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+checking for None
+>>> mybase.integer_validator("age", None)
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+checking for positional argument
+>>> mybase.integer_validator("age")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> mybase.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> mybase.integer_validator("age", 4, 8)
+Traceback (most recent call last):
+...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> mybase.area(9)
+Traceback (most recent call last):
+...
+TypeError: area() takes 1 positional argument but 2 were given
 
 checking default. nothing should be printed since function only raises except
 >>> mybase.integer_validator("age", 2)
