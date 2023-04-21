@@ -132,8 +132,9 @@ class Rectangle(Base):
 
         rectangle id x/y w/h
         """
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
-                self.__y, self.__width, self.__height))
+        return ("[{}] ({}) {}/{} - {}/{}".format
+                (self.__class__.__name__, self.id, self.__x, self.__y,
+                 self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         """function assigns an argument to each attribute.
@@ -155,3 +156,9 @@ class Rectangle(Base):
             self.y = args[4]
         except IndexError:
             pass
+
+    def to_dictionary(self):
+        """function returns the dictionary represenation of the rectangle
+        attributes"""
+        return {'id': self.id, 'width': self.width, 'height': self.height,
+                'x': self.x, 'y': self.y}
