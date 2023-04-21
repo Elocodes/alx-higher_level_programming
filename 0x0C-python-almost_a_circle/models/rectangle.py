@@ -106,15 +106,21 @@ class Rectangle(Base):
         if the args x and y are passed, the shape is pushed to the right by
         x times and down by y times
         """
-        if self.x and self.y:
-            print('\n' * self.y)
-            print(('\t' * self.x).join('\n'.join('#' * self.__width for row
-                                                 in range(self.__height))))
-        elif self.x:
-            print(('\t' * self.__x).join('\n'.join('#' * self.__width for row
-                                                   in range(self.__height))))
-        elif self.y:
-            print('\n' * self.y)
+        rect = ''
+
+        if self.__x and self.__y:
+            print('\n' * self.__y, end='')
+            for i in range(self.__height):
+                rect += (' ' * self.__x) + ('#' * self.__width) + '\n'
+            print(rect, end='')
+
+        elif self.__x:
+            for i in range(self.__height):
+                rect += (' ' * self.__x) + ('#' * self.__width) + '\n'
+            print(rect, end='')
+
+        elif self.__y:
+            print('\n' * self.__y, end='')
             print('\n'.join('#' * self.__width for row
                             in range(self.__height)))
         else:
@@ -132,6 +138,14 @@ class Rectangle(Base):
     def update(self, *args):
         """function assigns an argument to each attribute.
 
-        The attributes receive arguments according to the specified order
+        The attributes receive arguments according to the specified order.
+        the arguments can be updated from one value to another
         """
-        args = (self.id, self.width, self.height, self.x, self.y)
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
