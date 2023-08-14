@@ -1,4 +1,4 @@
 # Javascripts
 
-project conatains tasks from printing simple lines in javascript to printing
-command line arguments.
+project explores basic use of Javascript syntax. Learner is intoduced to
+performing arithmetic operations and using loops in Javascript.
