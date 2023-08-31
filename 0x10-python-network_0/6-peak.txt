@@ -1,0 +1,2 @@
+- complexity of function in peak.py
+O(log(n))
