@@ -10,7 +10,7 @@ if __name__ == "__main__":
     r = requests.post('http://0.0.0.0:5000/search_user', data=val)
     try:
         content = r.json()
-        if not content:         #no content, json empty
+        if not content:         # no content, json empty
             print('No result')
         else:
             print('[{}] {}'.format(content.get('id'), content.get('name')))
